@@ -22,6 +22,6 @@ bash -c "$_alert 'Checking for Homebrew..'"
 check_brew
 
 bash -c "$_alert 'Installing tools..'"
-# brew bundle --file "$CWD"/Brewfile
+brew bundle --file "$CWD"/Brewfile
 
 source ~/.bashrc
