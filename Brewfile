@@ -1,0 +1,5 @@
+brew "gnutls"
+brew "autoconf"
+brew "automake"
+brew "binutils"
+brew "radare2"
