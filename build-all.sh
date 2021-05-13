@@ -1,29 +1,27 @@
 #!/bin/bash
 
 CWD=`pwd`
-ACCENT="\033[1;35m"
-RES="\033[0m"
 
-info() {
-   printf "::\t $@ \n\n"
-}
+export ACCENT="\033[1;35m"
+export RES="\033[0m"
 
-alert() {
-   printf "${ACCENT}[!]${RES} $@\n" 
-}
+_info="$CWD/scripts/info.sh $@"
+_alert="$CWD/scripts/alert.sh $@"
 
 check_brew() {
    local _brew=`which brew`
    if [[ -e $_brew ]]; then
-     info "found brew: $_brew"
+     bash -c "$_info 'found brew: $_brew'"
    else
-     alert "Could not find homebrew!"
+     bash -c "$_alert Could not find homebrew!"
      exit 1
    fi
 }
 
-alert "Checking for Homebrew.."
+bash -c "$_alert 'Checking for Homebrew..'"
 check_brew
 
-alert "Installing tools.."
-brew bundle --file "$CWD"/Brewfile
+bash -c "$_alert 'Installing tools..'"
+# brew bundle --file "$CWD"/Brewfile
+
+source ~/.bashrc

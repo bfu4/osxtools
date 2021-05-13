@@ -1,3 +1,14 @@
+brew "wget"
+brew "thefuck"
+brew "vim"
+brew "bat"
+
+brew tap "cjbassi/ytop"
+brew "ytop"
+
+brew "python3"
+brew "openjdk@11"
+brew "htop"
 brew "gnutls"
 brew "autoconf"
 brew "automake"
